@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.bak
+*.swp
+*.swo
+*.swn
+*.swo
+*.egg-info/
+dist/
+build/
+env/
+*.env
+
+# MySQL
+*.sql
+
+# IDE/Editor-specific files and directories (e.g., Visual Studio Code, PyCharm)
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-workspace
+
+# Compiled Python files and binaries
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Temporary files
+*~
+*.swp
+
+# Logs and data files
+*.log
+*.db
+
+# System and environment-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+__pycache__/
+node_modules/
