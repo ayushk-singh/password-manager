@@ -1,4 +1,3 @@
-from multiprocessing import connection
 import mysql.connector
 import os
 from dotenv import load_dotenv
@@ -84,4 +83,32 @@ def search_pass(app_name):
             cursor.close()
 
 
+def find_user_name(username):
+    connection = connect_to_database()
+    try:
+        if connection is None:
+            print("Database connection is not established. Exiting.")
+            return
+        cursor = connection.cursor()
+
+        # Define the SELECT query to retrieve a password by app name
+        select_query = "SELECT password FROM pswd WHERE username = %s"
+
+        # Execute the SELECT query with the app_name as a tuple
+        cursor.execute(select_query, (username,))
+
+        # Fetch and print the stored passwords
+        passwords = cursor.fetchall()
+        if passwords:
+            for password in passwords:
+                print(f"Password for {username}: {password[0]}")
+        else:
+            print(f"No password found for {username}.")
+
+    except mysql.connector.Error as error:
+        print(f"Error retrieving password: {error}")
+
+    finally:
+        if 'cursor' in locals():
+            cursor.close()
 
