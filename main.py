@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # 2. find password for a site
 # 3. Find all sites connected to an email
 
-passw = input('Please provide the master password to start using kallemanager3000: ')
+passw = input('Please provide the master password: ')
 load_dotenv()
 if passw == os.getenv('SECRET'):
     print('You\'re in')
@@ -16,7 +16,7 @@ else:
     exit() 
 
 choice = menu()
-while choice != 'Q':
+while choice != 'Q' and choice != 'q':
     if choice == '1':
         create()
     if choice == '2':
