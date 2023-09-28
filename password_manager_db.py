@@ -12,9 +12,9 @@ def connect_to_database():
             database=os.getenv('DB_DATABASE')
         )
 
-        # if connection.is_connected():
-        #     print("Connected to MySQL database")
-        #     return connection
+        if connection.is_connected():
+             print("Connected to MySQL database")
+             return connection
 
     except mysql.connector.Error as error:
         print(f"Error connecting to the database: {error}")
